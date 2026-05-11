@@ -63,13 +63,8 @@ COPY firebase_service.py ./
 COPY config.py           ./
 
 # ── Model artifacts ───────────────────────────────────────────────
-# In production these should be pulled from an artifact store
-# (S3, GCS, DVC) at container startup, not baked into the image.
-# They are included here for local development convenience.
-# Override by mounting a volume: -v /host/models:/app/models
 COPY toxicity_model_v3.pkl ./
-COPY models/               ./models/
-COPY sentiment_model/     ./sentiment_model/
+# Note: Removed COPY models/ and sentiment_model/ as they are not present in the repo.
 
 # ── Runtime configuration ─────────────────────────────────────────
 ENV PYTHONUNBUFFERED=1 \
