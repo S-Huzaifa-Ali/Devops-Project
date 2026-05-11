@@ -4,7 +4,7 @@ import CarSlideshow from '../components/CarSlideshow.jsx'
 import { auth } from '../firebase.js'
 import { onAuthStateChanged } from 'firebase/auth'
 
-const BACKEND = 'http://localhost:8000'
+const BACKEND = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
 
 export default function AdminPage() {
   const [token, setToken] = useState(null)

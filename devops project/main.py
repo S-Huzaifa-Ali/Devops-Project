@@ -88,15 +88,7 @@ app = FastAPI()
 # Add CORS middleware to allow frontend to fetch data
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "http://localhost:8081",
-        "http://127.0.0.1:8000",
-        "http://127.0.0.1:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
+    allow_origins=["*"],  # Allows all origins for deployment. For production, specify your Vercel URL.
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

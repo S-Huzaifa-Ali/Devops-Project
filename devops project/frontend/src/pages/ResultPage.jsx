@@ -3,7 +3,7 @@ import SiteHeader from '../components/SiteHeader.jsx'
 import CarSlideshow from '../components/CarSlideshow.jsx'
 import RiskGauge from '../components/RiskGauge.jsx'
 
-const BACKEND = 'http://localhost:8000'
+const BACKEND = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000'
 
 export default function ResultPage({ params }) {
   const [data, setData] = useState(null)
